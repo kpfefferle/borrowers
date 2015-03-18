@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
       return !Ember.isEmpty(this.get('model.email')) &&
              !Ember.isEmpty(this.get('model.firstName')) &&
              !Ember.isEmpty(this.get('model.lastName')) &&
-             !Ember.isEmpty(this.get('model.twitter'))
+             !Ember.isEmpty(this.get('model.twitter'));
     }
   ),
 
