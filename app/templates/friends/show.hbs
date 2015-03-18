@@ -5,5 +5,8 @@
   <li>Last Name: {{model.lastName}}</li>
   <li>Email: {{model.email}}</li>
   <li>Twitter: {{model.twitter}}</li>
+</ul>
+<ul>
   <li>{{link-to 'Edit Info' 'friends.edit' model}}</li>
+  <li><a href="#" {{action 'delete' model}}>Delete</a></li>
 </ul>
