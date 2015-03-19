@@ -6,7 +6,6 @@ export default Ember.Controller.extend({
   isValid: Ember.computed.and('hasDescription', 'hasNotes'),
   actions: {
     save: function() {
-      debugger;
       if (this.get('isValid')) {
         return true;
       } else {
