@@ -43,6 +43,23 @@ test('creating a new friend', function(assert) {
       currentRouteName(),
       'friends.show.index',
       'Redirects to friends.show after create'
-    )
+    );
+  });
+});
+
+test('clicking save without filling fields', function(assert) {
+  visit('/friends/new');
+  click('input[value="Save"]')
+  andThen(function() {
+    assert.equal(
+      currentRouteName(),
+      'friends.new',
+      'Stays on new page'
+    );
+    assert.equal(
+      find("h2:contains(You have to fill all the fields)").length,
+      1,
+      'Displays error message'
+    );
   });
 });
