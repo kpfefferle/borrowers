@@ -1,0 +1,48 @@
+import Ember from 'ember';
+import {
+  module,
+  test
+} from 'qunit';
+import startApp from 'borrowers/tests/helpers/start-app';
+
+var application;
+
+module('Acceptance: FriendsNew', {
+  beforeEach: function() {
+    application = startApp();
+  },
+
+  afterEach: function() {
+    Ember.run(application, 'destroy');
+  }
+});
+
+test('visiting /friends/new', function(assert) {
+  visit('/friends/new');
+
+  andThen(function() {
+    assert.equal(currentPath(), 'friends.new');
+  });
+});
+
+test('creating a new friend', function(assert) {
+  visit('/');
+  click('a[href="/friends/new"]');
+  andThen(function() {
+    assert.equal(currentPath(), 'friends.new');
+  });
+
+  fillIn('input[placeholder="First Name"]', 'Johnny');
+  fillIn('input[placeholder="Last Name"]', 'Cash');
+  fillIn('input[placeholder="Email"]', 'j@cash.com');
+  fillIn('input[placeholder="Twitter"]', 'jcash');
+  click('input[value="Save"]')
+
+  andThen(function() {
+    assert.equal(
+      currentRouteName(),
+      'friends.show.index',
+      'Redirects to friends.show after create'
+    )
+  });
+});
