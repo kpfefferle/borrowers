@@ -36,7 +36,7 @@ test('creating a new friend', function(assert) {
   fillIn('input[placeholder="Last Name"]', 'Cash');
   fillIn('input[placeholder="Email"]', 'j@cash.com');
   fillIn('input[placeholder="Twitter"]', 'jcash');
-  click('input[value="Save"]')
+  click('input[value="Save"]');
 
   andThen(function() {
     assert.equal(
@@ -49,7 +49,7 @@ test('creating a new friend', function(assert) {
 
 test('clicking save without filling fields', function(assert) {
   visit('/friends/new');
-  click('input[value="Save"]')
+  click('input[value="Save"]');
   andThen(function() {
     assert.equal(
       currentRouteName(),
