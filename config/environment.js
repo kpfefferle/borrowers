@@ -2,6 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
+    host: 'http://fathomless-everglades-7794.herokuapp.com',
     modulePrefix: 'borrowers',
     environment: environment,
     baseURL: '/',
