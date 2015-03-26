@@ -37,7 +37,7 @@
     "ember-export-application-global": "^1.0.2"
   },
   "dependencies": {
-    "moment": "^2.9.0",
-    "ember-cli-fill-murray-kpfefferle": "^0.1.1"
+    "ember-cli-fill-murray-kpfefferle": "^0.2.0",
+    "moment": "^2.9.0"
   }
 }
